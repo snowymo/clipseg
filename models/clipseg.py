@@ -83,7 +83,7 @@ class CLIPDenseBase(nn.Module):
         import clip
 
         # prec = torch.FloatTensor
-        self.clip_model, _ = clip.load(version, device='cpu', jit=False)
+        self.clip_model, _ = clip.load(version, device='cuda', jit=False)
         self.model = self.clip_model.visual
 
         # if not None, scale conv weights such that we obtain n_tokens.
